@@ -247,7 +247,7 @@ public class NinetyNine {
             }
         }
 
-        // Close the Scanner to avoid memory leak
+        // Close the Scanner to avoid memory resource leak
         scanner.close();
     }
 }
