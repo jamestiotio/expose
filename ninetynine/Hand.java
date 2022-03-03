@@ -8,7 +8,7 @@ public class Hand {
     public SecureRandom rng = new SecureRandom();
 
     public void initialize(int handSize) {
-        // Add 3 cards of random suit and rank
+        // Add cards of random suit and rank to the hand, where number of cards is handSize
         for (int i = 0; i < handSize; i++) {
             cards.add(new Card());
         }
