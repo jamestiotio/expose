@@ -1,0 +1,223 @@
+package ninetynine;
+
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ * The NinetyNine program implements an application with a main loop that interacts with the user to
+ * play the <b>Ninety Nine (99)</b> game via the standard input/output streams.
+ * <p>
+ * Created for SUTD PADI EXPOSE 2022 Course Trial (Computer Science).
+ *
+ * @author James Raphael Tiovalen
+ * @version 1.0.0
+ * @since 2022-02-24
+ */
+public class NinetyNine {
+    // We use this integer instead of using a circular doubly linked list data structure since this
+    // is much simpler
+    public static int currentPlayerIndex = 0;
+    public static boolean isForward = true;
+    public static int currentRunningTotal = 0;
+    // By default, two players will play the game
+    public static int numOfPlayers = 2;
+    // By default, the hand size of each player is 3
+    public static int handSize = 3;
+    // By convention, we always set the user to be the first player (with index 0)
+    public static ArrayList<Player> players = new ArrayList<Player>();
+    public static SecureRandom aceRandomizer = new SecureRandom();
+
+    public static void main(String[] args) {
+        if (args.length > 2) {
+            System.out.println("Please provide only two arguments at most.");
+            System.exit(0);
+        }
+
+        if (args.length <= 0) {
+            System.out.println(
+                    "No arguments are supplied. The default number of players of 2 and the default hand size of 3 will be used.\n");
+        }
+
+        if (args.length == 1) {
+            try {
+                int specifiedNumOfPlayers = Integer.parseInt(args[0]);
+
+                if (specifiedNumOfPlayers < 2) {
+                    System.out.println("Please provide at least two players.");
+                    System.exit(0);
+                }
+
+                numOfPlayers = specifiedNumOfPlayers;
+            } catch (NumberFormatException e) {
+                System.out.println("Please provide a valid number of players.");
+                System.exit(0);
+            }
+        }
+
+        if (args.length == 2) {
+            try {
+                int specifiedHandSize = Integer.parseInt(args[1]);
+
+                if (specifiedHandSize < 2) {
+                    System.out.println("Please specify at least 2 for the hand size.");
+                    System.exit(0);
+                }
+
+                handSize = specifiedHandSize;
+            } catch (NumberFormatException e) {
+                System.out.println("Please provide a valid hand size.");
+                System.exit(0);
+            }
+        }
+
+        // Initialize the players
+        for (int i = 0; i < numOfPlayers; i++) {
+            players.add(new Player(i));
+        }
+
+        // Initialize the hands of each players
+        for (Player player : players) {
+            player.hand.initialize(handSize);
+        }
+
+        // Initialize the Scanner to scan for user input
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            // Print the current running total
+            System.out.println("Current running total: " + currentRunningTotal + "\n");
+
+            Player currentPlayer = players.get(currentPlayerIndex);
+            // Print the hand of the current player
+            currentPlayer.printHand();
+
+            if (currentPlayerIndex == 0) {
+                System.out.println("Please enter the index of the card you want to play:");
+                while (true) {
+                    try {
+                        // Read the user player's input
+                        int selectedCardIndex = Integer.parseInt(scanner.nextLine().trim());
+
+                        if (selectedCardIndex < 0 || selectedCardIndex >= handSize) {
+                            System.out.println("Please select a valid card index:");
+                            continue;
+                        }
+
+                        // Get the card at the specified index
+                        Card selectedCard =
+                                currentPlayer.hand.selectSpecificCard(selectedCardIndex);
+
+                        // Print the current selected card
+                        System.out.println("You selected: " + selectedCard.toString() + "\n");
+
+                        // Add the value of the selected card to the current running total
+                        int cardValue = selectedCard.getValue();
+                        switch (cardValue) {
+                            case 4:
+                                isForward = !isForward;
+                                break;
+                            case 9:
+                                break;
+                            case 10:
+                                currentRunningTotal -= 10;
+                                break;
+                            case 13:
+                                currentRunningTotal = 99;
+                                break;
+                            case 14:
+                                System.out.println(
+                                        "Please select the value of the Ace card (either 1 or 11):");
+                                while (true) {
+                                    try {
+
+                                        int selectedCardValue =
+                                                Integer.parseInt(scanner.nextLine().trim());
+
+                                        if (selectedCardValue == 1 || selectedCardValue == 11) {
+                                            currentRunningTotal += selectedCardValue;
+                                        } else {
+                                            System.out.println(
+                                                    "Please select a valid Ace card value.");
+                                            continue;
+                                        }
+                                    } catch (NumberFormatException e) {
+                                        System.out.println("Please select a valid Ace card value.");
+                                        continue;
+                                    }
+                                    break;
+                                }
+                                break;
+                            default:
+                                currentRunningTotal += cardValue;
+                                break;
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("Please provide a valid hand size:");
+                        continue;
+                    }
+                    break;
+                }
+            } else {
+                // Let the CPU players choose a random card to play
+                System.out.println(
+                        "CPU Player " + currentPlayerIndex + " is choosing a card to play...");
+                Card selectedCard = currentPlayer.hand.selectRandomCard();
+                System.out.println(
+                        "CPU Player " + currentPlayerIndex + " selected: " + selectedCard + "\n");
+                int cardValue = selectedCard.getValue();
+                switch (cardValue) {
+                    case 4:
+                        isForward = !isForward;
+                        break;
+                    case 9:
+                        break;
+                    case 10:
+                        currentRunningTotal -= 10;
+                        break;
+                    case 13:
+                        currentRunningTotal = 99;
+                        break;
+                    case 14:
+                        int selectedCardValue = aceRandomizer.nextBoolean() ? 1 : 11;
+                        System.out.println("CPU Player " + currentPlayerIndex
+                                + " selected the Ace card with value " + selectedCardValue + "\n");
+                        currentRunningTotal += selectedCardValue;
+                        break;
+                    default:
+                        currentRunningTotal += cardValue;
+                        break;
+                }
+            }
+
+            // If the current running total is greater than 99, remove the current player from the
+            // player list
+            if (currentRunningTotal > 99) {
+                players.remove(currentPlayerIndex);
+                currentPlayerIndex--;
+                currentRunningTotal = 0;
+            }
+
+            // Change the current player index depending on the direction of the game, modulo the
+            // current number of players
+            if (isForward) {
+                currentPlayerIndex = (currentPlayerIndex + 1) % numOfPlayers;
+            } else {
+                currentPlayerIndex = (currentPlayerIndex - 1 + numOfPlayers) % numOfPlayers;
+            }
+
+            // End the game when there is one person left
+            if (players.size() == 1) {
+                if (players.get(0).getPlayerIndex() == 0) {
+                    System.out.println("You win!");
+                } else {
+                    System.out.println("CPU Player " + players.get(0).getPlayerIndex() + " wins!");
+                }
+                break;
+            }
+        }
+
+        // Close the Scanner to avoid memory leak
+        scanner.close();
+    }
+}
