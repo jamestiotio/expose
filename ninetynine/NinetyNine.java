@@ -122,6 +122,10 @@ public class NinetyNine {
                             case 10:
                                 currentRunningTotal -= 10;
                                 break;
+                            case 11:
+                            case 12:
+                                currentRunningTotal += 10;
+                                break;
                             case 13:
                                 currentRunningTotal = 99;
                                 break;
@@ -174,6 +178,10 @@ public class NinetyNine {
                         break;
                     case 10:
                         currentRunningTotal -= 10;
+                        break;
+                    case 11:
+                    case 12:
+                        currentRunningTotal += 10;
                         break;
                     case 13:
                         currentRunningTotal = 99;
