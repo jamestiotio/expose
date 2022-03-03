@@ -96,7 +96,9 @@ public class NinetyNine {
             // Print the hand of the current player
             currentPlayer.printHand();
 
-            if (currentPlayerIndex == 0) {
+            int currentPlayerID = currentPlayer.getPlayerID();
+
+            if (currentPlayerID == 0) {
                 System.out.println("Please enter the index of the card you want to play:");
                 while (true) {
                     try {
@@ -168,11 +170,11 @@ public class NinetyNine {
                 }
             } else {
                 // Let the CPU players choose a random card to play
-                System.out.println("CPU Player " + players.get(currentPlayerIndex).getPlayerIndex()
-                        + " is choosing a card to play...");
+                System.out.println(
+                        "CPU Player " + currentPlayerID + " is choosing a card to play...");
                 Card selectedCard = currentPlayer.hand.selectRandomCard();
-                System.out.println("CPU Player " + players.get(currentPlayerIndex).getPlayerIndex()
-                        + " selected: " + selectedCard + "\n");
+                System.out.println(
+                        "CPU Player " + currentPlayerID + " selected: " + selectedCard + "\n");
                 int cardValue = selectedCard.getValue();
                 switch (cardValue) {
                     case 4:
@@ -192,10 +194,8 @@ public class NinetyNine {
                         break;
                     case 14:
                         int selectedCardValue = aceRandomizer.nextBoolean() ? 1 : 11;
-                        System.out.println(
-                                "CPU Player " + players.get(currentPlayerIndex).getPlayerIndex()
-                                        + " selected the value " + selectedCardValue
-                                        + " for the Ace card.\n");
+                        System.out.println("CPU Player " + currentPlayerID + " selected the value "
+                                + selectedCardValue + " for the Ace card.\n");
                         currentRunningTotal += selectedCardValue;
                         break;
                     default:
@@ -207,12 +207,11 @@ public class NinetyNine {
             // If the current running total is greater than 99, remove the current player from the
             // player list
             if (currentRunningTotal > 99) {
-                if (currentPlayerIndex == 0) {
+                if (currentPlayerID == 0) {
                     System.out.println("You lose!\n");
                 } else {
                     System.out.println(
-                            "CPU Player " + players.get(currentPlayerIndex).getPlayerIndex()
-                                    + " is removed from the game.\n");
+                            "CPU Player " + currentPlayerID + " is removed from the game.\n");
                 }
                 players.remove(currentPlayerIndex);
                 int currentNumOfPlayers = players.size();
@@ -238,10 +237,11 @@ public class NinetyNine {
 
             // End the game when there is one person left
             if (players.size() == 1) {
-                if (players.get(0).getPlayerIndex() == 0) {
+                int winnerID = players.get(0).getPlayerID();
+                if (winnerID == 0) {
                     System.out.println("You win!");
                 } else {
-                    System.out.println("CPU Player " + players.get(0).getPlayerIndex() + " wins!");
+                    System.out.println("CPU Player " + winnerID + " wins!");
                 }
                 break;
             }

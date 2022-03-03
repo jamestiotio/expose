@@ -8,7 +8,7 @@ public class Player {
         this.id = id;
     }
 
-    public int getPlayerIndex() {
+    public int getPlayerID() {
         return this.id;
     }
 
