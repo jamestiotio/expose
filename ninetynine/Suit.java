@@ -12,6 +12,7 @@ public enum Suit {
         return name().charAt(0) + name().substring(1).toLowerCase();
     }
 
+    // Cache the result of values() and use one SecureRandom instance
     private static final List<Suit> SUITS = Collections.unmodifiableList(Arrays.asList(values()));
     private static final int SIZE = SUITS.size();
     private static final SecureRandom RANDOM = new SecureRandom();

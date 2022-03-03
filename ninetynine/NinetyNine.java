@@ -140,7 +140,6 @@ public class NinetyNine {
                                         "Please select the value of the Ace card (either 1 or 11):");
                                 while (true) {
                                     try {
-
                                         int selectedCardValue =
                                                 Integer.parseInt(scanner.nextLine().trim());
 
