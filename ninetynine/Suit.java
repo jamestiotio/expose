@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 public enum Suit {
-    CLUBS, SPADES, HEARTS, DIAMONDS;
+    CLUBS, DIAMONDS, HEARTS, SPADES;
 
     public String toString() {
         return name().charAt(0) + name().substring(1).toLowerCase();
