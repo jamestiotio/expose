@@ -29,6 +29,7 @@ public class NinetyNine {
     public static SecureRandom aceRandomizer = new SecureRandom();
 
     public static void main(String[] args) {
+        // Specify some guard clauses
         if (args.length > 2) {
             System.out.println("Please provide only two arguments at most.");
             System.exit(0);
@@ -39,7 +40,7 @@ public class NinetyNine {
                     "No arguments are supplied. The default number of players of 2 and the default hand size of 3 will be used.\n");
         }
 
-        if (args.length == 1) {
+        if (args.length > 0) {
             try {
                 int specifiedNumOfPlayers = Integer.parseInt(args[0]);
 
@@ -70,6 +71,9 @@ public class NinetyNine {
                 System.exit(0);
             }
         }
+
+        System.out.println("Number of players for this game: " + numOfPlayers);
+        System.out.println("Hand size for this game: " + handSize + "\n");
 
         // Initialize the players
         for (int i = 0; i < numOfPlayers; i++) {
@@ -142,11 +146,11 @@ public class NinetyNine {
                                             currentRunningTotal += selectedCardValue;
                                         } else {
                                             System.out.println(
-                                                    "Please select a valid Ace card value.");
+                                                    "Please select a valid Ace card value:");
                                             continue;
                                         }
                                     } catch (NumberFormatException e) {
-                                        System.out.println("Please select a valid Ace card value.");
+                                        System.out.println("Please select a valid Ace card value:");
                                         continue;
                                     }
                                     break;
@@ -157,18 +161,18 @@ public class NinetyNine {
                                 break;
                         }
                     } catch (NumberFormatException e) {
-                        System.out.println("Please provide a valid hand size:");
+                        System.out.println("Please select a valid card index:");
                         continue;
                     }
                     break;
                 }
             } else {
                 // Let the CPU players choose a random card to play
-                System.out.println(
-                        "CPU Player " + currentPlayerIndex + " is choosing a card to play...");
+                System.out.println("CPU Player " + players.get(currentPlayerIndex).getPlayerIndex()
+                        + " is choosing a card to play...");
                 Card selectedCard = currentPlayer.hand.selectRandomCard();
-                System.out.println(
-                        "CPU Player " + currentPlayerIndex + " selected: " + selectedCard + "\n");
+                System.out.println("CPU Player " + players.get(currentPlayerIndex).getPlayerIndex()
+                        + " selected: " + selectedCard + "\n");
                 int cardValue = selectedCard.getValue();
                 switch (cardValue) {
                     case 4:
@@ -188,8 +192,10 @@ public class NinetyNine {
                         break;
                     case 14:
                         int selectedCardValue = aceRandomizer.nextBoolean() ? 1 : 11;
-                        System.out.println("CPU Player " + currentPlayerIndex
-                                + " selected the Ace card with value " + selectedCardValue + "\n");
+                        System.out.println(
+                                "CPU Player " + players.get(currentPlayerIndex).getPlayerIndex()
+                                        + " selected the value " + selectedCardValue
+                                        + " for the Ace card.\n");
                         currentRunningTotal += selectedCardValue;
                         break;
                     default:
@@ -201,17 +207,33 @@ public class NinetyNine {
             // If the current running total is greater than 99, remove the current player from the
             // player list
             if (currentRunningTotal > 99) {
+                if (currentPlayerIndex == 0) {
+                    System.out.println("You lose!\n");
+                } else {
+                    System.out.println(
+                            "CPU Player " + players.get(currentPlayerIndex).getPlayerIndex()
+                                    + " is removed from the game.\n");
+                }
                 players.remove(currentPlayerIndex);
-                currentPlayerIndex--;
+                int currentNumOfPlayers = players.size();
+                if (isForward) {
+                    currentPlayerIndex =
+                            (currentPlayerIndex - 1 + currentNumOfPlayers) % currentNumOfPlayers;
+                } else {
+                    currentPlayerIndex %= currentNumOfPlayers;
+                }
+
                 currentRunningTotal = 0;
             }
 
             // Change the current player index depending on the direction of the game, modulo the
             // current number of players
+            int currentNumOfPlayers = players.size();
             if (isForward) {
-                currentPlayerIndex = (currentPlayerIndex + 1) % numOfPlayers;
+                currentPlayerIndex = (currentPlayerIndex + 1) % currentNumOfPlayers;
             } else {
-                currentPlayerIndex = (currentPlayerIndex - 1 + numOfPlayers) % numOfPlayers;
+                currentPlayerIndex =
+                        (currentPlayerIndex - 1 + currentNumOfPlayers) % currentNumOfPlayers;
             }
 
             // End the game when there is one person left

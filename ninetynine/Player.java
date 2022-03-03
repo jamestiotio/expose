@@ -14,7 +14,11 @@ public class Player {
 
     public void printHand() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Player " + id + " has " + hand.cards.size() + " cards:\n");
+        if (this.id == 0) {
+            sb.append("You have " + hand.cards.size() + " cards:\n");
+        } else {
+            sb.append("CPU Player " + id + " has " + hand.cards.size() + " cards:\n");
+        }
         sb.append(hand.getPrintableHand());
         System.out.println(sb.toString());
     }
