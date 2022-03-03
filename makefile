@@ -1,4 +1,4 @@
-all: ninetynine/*
+all: ninetynine/*.java
 	javac ninetynine/*.java
 
 clean:
