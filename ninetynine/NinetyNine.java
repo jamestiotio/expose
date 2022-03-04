@@ -122,7 +122,6 @@ public class NinetyNine {
                         switch (cardValue) {
                             case 4:
                                 isForward = !isForward;
-                                break;
                             case 9:
                                 break;
                             case 10:
@@ -178,7 +177,6 @@ public class NinetyNine {
                 switch (cardValue) {
                     case 4:
                         isForward = !isForward;
-                        break;
                     case 9:
                         break;
                     case 10:
