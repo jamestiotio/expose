@@ -1,6 +1,6 @@
 # SUTD PADI EXPOSÉ 2022 Course Trial (Computer Science)
 
-The course trial will teach basic programming concepts in Java. The design project for this course trial would be implementing the 99 card game on a command-line terminal. Reference solution code is included in this repository.
+The course trial will teach basic programming concepts in [Java](https://www.oracle.com/java/). The design project for this course trial would be implementing the 99 card game on a command-line terminal. Reference solution code, as well as other relevant materials such as the workshop slides presented during the lecture and any other potential extra materials, are included in this repository.
 
 ## Introduction to Ninety Nine
 
@@ -16,9 +16,37 @@ The card game [99 (Ninety Nine)](<https://en.wikipedia.org/wiki/Ninety-nine_(add
   - A 10 subtracts 10 points from the total
   - A King takes the point total to 99 (or keeps it 99 if the total is already 99)
   - An Ace adds either 1 or 11 points, chosen by the player who plays it
-- After each card is played, the new total is updated accordingly and the player draws a replacement card from an infinite card pool/stack.
+- After each card is played, the new total is updated accordingly and the player draws a random replacement card from an infinite card pool/stack.
 - Each player must play a card without sending the total number of points higher than 99.
 - If a player sends the total number of points higher than 99, that player loses and the current running total number of points is reset to 0.
+- Once N-1 players are eliminated, the remaining sole player wins that game round.
+
+## Concepts Involved
+
+- If-else conditionals
+- While loops
+- Switch-case statements
+- `Scanner` for user input
+- CLI argument parsing
+- Classes
+- Class methods
+- Explicit constructor invocation
+- `ArrayList`
+- Enums
+- `Random`/`SecureRandom`
+- Guard clauses
+- Defensive checks against bad user input
+- Infinite `while (true)` loops as the main game loop
+- Modular program design/architecture
+
+## Bonus Challenge Questions
+
+If you are interested, you may explore these additional concepts relevant to coding in the Java language and perhaps implement them in your own free time:
+
+- Class inheritance
+- Interfaces
+- Unit and system testing using `JUnit`
+- Implement CPUs that play in an optimized manner. Each CPU player checks the current running total value and selects the best playable card, with possibly an optional lookahead to some degree/level using game theory. Each player should not know what cards are possessed by other players.
 
 ## Acknowledgements
 
