@@ -1,6 +1,8 @@
 # SUTD PADI EXPOSÉ 2022 Course Trial (Computer Science)
 
-The course trial will teach basic programming concepts in [Java](https://www.oracle.com/java/). The design project for this course trial would be implementing the 99 card game on a command-line terminal. Reference solution code, as well as other relevant materials such as the workshop slides presented during the lecture and any other potential extra materials, are included in this repository.
+The course trial will teach basic programming concepts in [Java](https://www.oracle.com/java/). The design project for this course trial would be implementing the 99 card game on a command-line terminal. Reference solution code, as well as other relevant materials such as the workshop slides presented during the lecture, exercise example code, and any other potential extra materials, are included in this repository.
+
+Note that any reference solution code implemented in this repository is simply just that, a reference. It is definitely not the only way to implement the system requirements/functionalities of the program.
 
 ## Introduction to Ninety Nine
 

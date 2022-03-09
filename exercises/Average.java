@@ -1,4 +1,5 @@
-package examples;
+// Exercise 3
+package exercises;
 
 import java.util.ArrayList;
 
