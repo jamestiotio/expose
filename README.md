@@ -10,7 +10,7 @@ The card game [99 (Ninety Nine)](<https://en.wikipedia.org/wiki/Ninety-nine_(add
 
 ## Gameplay Mechanics
 
-- There are N players. The user is one of them, while the other N-1 players would be operated by the CPU. CPU players would play in a random manner (instead of in an optimized manner).
+- There are N players. The user is one of them (with ID 0), while the other N-1 players would be operated by the CPU. CPU players would play in a random manner (instead of in an optimized manner).
 - Each player is dealt M cards.
 - The point total starts at zero and each card adds its face value in points (example: a 5 is worth five points, a face card is worth 10 points) except for certain cards that have special values or meanings:
   - A 4 reverses play (and does not change the total number of points)
