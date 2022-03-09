@@ -85,7 +85,7 @@ public class NinetyNine {
             player.hand.initialize(handSize);
         }
 
-        // Initialize the Scanner to scan for user input
+        // TODO: Initialize the Scanner to scan for user input
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -102,7 +102,7 @@ public class NinetyNine {
                 System.out.println("Please enter the index of the card you want to play:");
                 while (true) {
                     try {
-                        // Read the user player's input
+                        // TODO: Read the user player's input
                         int selectedCardIndex = Integer.parseInt(scanner.nextLine().trim());
 
                         if (selectedCardIndex < 0 || selectedCardIndex >= handSize) {
@@ -114,7 +114,7 @@ public class NinetyNine {
                         Card selectedCard =
                                 currentPlayer.hand.selectSpecificCard(selectedCardIndex);
 
-                        // Print the current selected card
+                        // TODO: Print the current selected card
                         System.out.println("You selected: " + selectedCard.toString() + "\n");
 
                         // Add the value of the selected card to the current running total
@@ -204,6 +204,8 @@ public class NinetyNine {
             // If the current running total is greater than 99, remove the current player from the
             // player list
             if (currentRunningTotal > 99) {
+                // TODO: If the player loses, print "You lose!" (hint: player has index 0)
+                // Otherwise, print the CPU player that loses the game.
                 if (currentPlayerID == 0) {
                     System.out.println("You lose!\n");
                 } else {
