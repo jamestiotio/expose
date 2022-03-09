@@ -37,7 +37,7 @@ The card game [99 (Ninety Nine)](<https://en.wikipedia.org/wiki/Ninety-nine_(add
 - Guard clauses
 - Defensive checks against bad user input
 - Infinite `while (true)` loops as the main game loop
-- Modular program design/architecture
+- Modular program/software design/architecture
 
 ## Bonus Challenge Questions
 
