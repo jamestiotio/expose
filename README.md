@@ -1,4 +1,4 @@
-# SUTD PADI EXPOSÉ 2022 Course Trial (Computer Science)
+# SUTD PADI EXPOSÉ Education Fair 2022 Course Trial (Computer Science)
 
 The course trial will teach basic programming concepts in [Java](https://www.oracle.com/java/). The design project for this course trial would be implementing the 99 card game on a command-line terminal. Reference solution code, as well as other relevant materials such as the workshop slides presented during the lecture, exercise example code, and any other potential extra materials, are included in this repository.
 
@@ -52,7 +52,7 @@ If you are interested, you may explore these additional concepts relevant to cod
 
 ## Acknowledgements
 
-SUTD EXPOSÉ 2022 Course Trial Team Members:
+SUTD EXPOSÉ Education Fair 2022 Course Trial Team Members:
 
 - [Ferry Chandra](https://github.com/FerryC13)
 - [Filbert Cia](https://github.com/FolkLoreee)
