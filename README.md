@@ -1,5 +1,7 @@
 # SUTD PADI EXPOSÉ Education Fair 2022 Course Trial (Computer Science)
 
+> Exploring Singapore Education
+
 The course trial will teach basic programming concepts in [Java](https://www.oracle.com/java/). The design project for this course trial would be implementing the 99 card game on a command-line terminal. Reference solution code, as well as other relevant materials such as the workshop slides presented during the lecture, exercise example code, and any other potential extra materials, are included in this repository.
 
 Note that any reference solution code implemented in this repository is simply just that, a reference. It is definitely not the only way to implement the system requirements/functionalities of the program.
@@ -52,7 +54,9 @@ If you are interested, you may explore these additional concepts relevant to cod
 
 ## Acknowledgements
 
-SUTD EXPOSÉ Education Fair 2022 Course Trial Team Members:
+This course was brought about by collaborating Indonesian students currently studying in tertiary education institutes in Singapore for Indonesian students.
+
+SUTD EXPOSÉ Education Fair 2022 Course Trial Team Members from [PADI](https://sutdindonesia.github.io/):
 
 - [Ferry Chandra](https://github.com/FerryC13)
 - [Filbert Cia](https://github.com/FolkLoreee)
@@ -62,3 +66,5 @@ SUTD EXPOSÉ Education Fair 2022 Course Trial Team Members:
 - Jonathan Layardi
 - Erick Chandra
 - Nathan Chang
+
+Credits also to the respective organizer teams from [PPI Singapura](https://www.ppisingapura.com/) and [PINUS](https://pinusonline.org/) (from NUS)!
