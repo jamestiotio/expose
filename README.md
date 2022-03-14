@@ -1,4 +1,4 @@
-# SUTD PADI EXPOSÉ Education Fair 2022 Course Trial (Computer Science)
+# SUTD PADI EXPOSÉ Education Fair 2022 Kiasu Course Trial (Computer Science)
 
 > Exploring Singapore Education
 
@@ -56,7 +56,7 @@ If you are interested, you may explore these additional concepts relevant to cod
 
 This course was brought about by collaborating Indonesian students currently studying in tertiary education institutes in Singapore for Indonesian students.
 
-SUTD EXPOSÉ Education Fair 2022 Course Trial Team Members from [PADI](https://sutdindonesia.github.io/):
+SUTD EXPOSÉ Education Fair 2022 Kiasu Course Trial Team Members from [PADI](https://sutdindonesia.github.io/):
 
 - [Ferry Chandra](https://github.com/FerryC13)
 - [Filbert Cia](https://github.com/FolkLoreee)
