@@ -206,6 +206,7 @@ public class NinetyNine {
             if (currentRunningTotal > 99) {
                 // TODO: If the player loses, print "You lose!" (hint: player has ID 0)
                 // Otherwise, print the CPU player that loses the game.
+                // Hint: You can use "currentPlayerID" to get the current player's ID as an integer
                 if (currentPlayerID == 0) {
                     System.out.println("You lose!\n");
                 } else {
