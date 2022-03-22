@@ -14,7 +14,7 @@ public class Average {
         }
 
         // TODO: Print the average of the numbers in "numbers"
-        int sum = 0;
+        float sum = 0;
         for (int i = 0; i < numbers.size(); i++) {
             sum += numbers.get(i);
         }
