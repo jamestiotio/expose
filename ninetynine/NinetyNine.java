@@ -20,10 +20,10 @@ public class NinetyNine {
     public static int currentPlayerIndex = 0;
     public static boolean isForward = true;
     public static int currentRunningTotal = 0;
-    // By default, two players will play the game
-    public static int numOfPlayers = 2;
-    // By default, the hand size of each player is 3
-    public static int handSize = 3;
+    // By default, three players will play the game
+    public static int numOfPlayers = 3;
+    // By default, the hand size of each player is five
+    public static int handSize = 5;
     // By convention, we always set the user to be the first player (with index 0)
     public static ArrayList<Player> players = new ArrayList<Player>();
     public static SecureRandom aceRandomizer = new SecureRandom();
@@ -37,7 +37,7 @@ public class NinetyNine {
 
         if (args.length <= 0) {
             System.out.println(
-                    "No arguments are supplied. The default number of players of 2 and the default hand size of 3 will be used.\n");
+                    "No arguments are supplied. The default number of players of 3 and the default hand size of 5 will be used.\n");
         }
 
         if (args.length > 0) {
