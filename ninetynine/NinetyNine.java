@@ -37,7 +37,8 @@ public class NinetyNine {
 
         if (args.length <= 0) {
             System.out.println(
-                    "No arguments are supplied. The default number of players of 3 and the default hand size of 5 will be used.\n");
+                    "No arguments are supplied. The default number of players of " + numOfPlayers
+                            + " and the default hand size of " + handSize + " will be used.\n");
         }
 
         if (args.length > 0) {
