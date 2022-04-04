@@ -66,7 +66,7 @@ This course was brought about by collaborating Indonesian students currently stu
 - Jonathan Davinius Layardi
 - Erick Chandra
 - Nathan Chang
-- Michelle Ordelia
+- Michelle Ordelia Sumaryo
 
 Credits also to the respective organizer teams from [PPI Singapura](https://www.ppisingapura.com/) and [PINUS](https://pinusonline.org/) (from NUS)! In particular, thanks to:
 
