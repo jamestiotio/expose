@@ -63,8 +63,15 @@ This course was brought about by collaborating Indonesian students currently stu
 - [Sean Gunawan](https://github.com/naffins)
 - [James Raphael Tiovalen](https://github.com/jamestiotio)
 - Edward Marco Moktar
-- Jonathan Layardi
+- Jonathan Davinius Layardi
 - Erick Chandra
 - Nathan Chang
+- Michelle Ordelia
 
-Credits also to the respective organizer teams from [PPI Singapura](https://www.ppisingapura.com/) and [PINUS](https://pinusonline.org/) (from NUS)!
+Credits also to the respective organizer teams from [PPI Singapura](https://www.ppisingapura.com/) and [PINUS](https://pinusonline.org/) (from NUS)! In particular, thanks to:
+
+- Florentiana Yuwono
+- Tiffany Irene Prasetio
+- Victoria Magdalena
+- Jason Christopher
+- Farrel Dwireswara Salim
