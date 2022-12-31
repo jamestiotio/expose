@@ -93,6 +93,33 @@ public class NinetyNine {
             // Print the current running total
             System.out.println("Current running total: " + currentRunningTotal + "\n");
 
+            // Print the number of players who are currently alive
+            System.out.println("Number of players who are currently alive: " + players.size());
+
+            // Print the list of players who are currently alive
+            System.out.println("Players who are currently alive:");
+            for (int i = 0; i < players.size(); i++) {
+                int playerId = players.get(i).getPlayerID();
+                if (playerId == 0) {
+                    System.out.println("Player " + playerId + " (You)");
+                } else {
+                    System.out.println("CPU Player " + playerId);
+                }
+            }
+
+            System.out.println("");
+
+            // End the game when there is one person left
+            if (players.size() == 1) {
+                int winnerID = players.get(0).getPlayerID();
+                if (winnerID == 0) {
+                    System.out.println("You win!");
+                } else {
+                    System.out.println("CPU Player " + winnerID + " wins!");
+                }
+                break;
+            }
+
             Player currentPlayer = players.get(currentPlayerIndex);
             // Print the hand of the current player
             currentPlayer.printHand();
@@ -123,6 +150,7 @@ public class NinetyNine {
                         switch (cardValue) {
                             case 4:
                                 isForward = !isForward;
+                                break;
                             case 9:
                                 break;
                             case 10:
@@ -178,6 +206,7 @@ public class NinetyNine {
                 switch (cardValue) {
                     case 4:
                         isForward = !isForward;
+                        break;
                     case 9:
                         break;
                     case 10:
@@ -234,17 +263,6 @@ public class NinetyNine {
             } else {
                 currentPlayerIndex =
                         (currentPlayerIndex - 1 + currentNumOfPlayers) % currentNumOfPlayers;
-            }
-
-            // End the game when there is one person left
-            if (players.size() == 1) {
-                int winnerID = players.get(0).getPlayerID();
-                if (winnerID == 0) {
-                    System.out.println("You win!");
-                } else {
-                    System.out.println("CPU Player " + winnerID + " wins!");
-                }
-                break;
             }
         }
 

@@ -20,7 +20,7 @@ The card game [99 (Ninety Nine)](<https://en.wikipedia.org/wiki/Ninety-nine_(add
   - A 10 subtracts 10 points from the total
   - A King takes the point total to 99 (or keeps it 99 if the total is already 99)
   - An Ace adds either 1 or 11 points, chosen by the player who plays it
-- After each card is played, the new total is updated accordingly and the player draws a random replacement card from an infinite card pool/stack.
+- After each card is played, the new total is updated accordingly and the player draws a random replacement card from an infinite card pool/stack/deck.
 - Each player must play a card without sending the total number of points higher than 99.
 - If a player sends the total number of points higher than 99, that player loses and the current running total number of points is reset to 0.
 - Once N-1 players are eliminated, the remaining sole player wins that game round.
@@ -50,6 +50,7 @@ If you are interested, you may explore these additional concepts relevant to cod
 - Class inheritance
 - Interfaces
 - Unit and system testing using `JUnit`
+- Implement multiple lives for each player. If a player sends the total number of points higher than 99, they lose a life, their cards are collected, and they are dealt a new hand.
 - Implement CPU players that play in an optimized manner. Each CPU player checks the current running total value and selects the best playable card, with possibly an optional lookahead to some degree/level. Each player should not know what cards are possessed by other players, but other players could potentially infer those cards based on behavior using game theory.
 
 ## Acknowledgements
