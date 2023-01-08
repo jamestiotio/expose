@@ -45,12 +45,14 @@ The card game [99 (Ninety Nine)](<https://en.wikipedia.org/wiki/Ninety-nine_(add
 
 ## Bonus Challenge Questions
 
-If you are interested, you may explore these additional concepts relevant to coding in the Java language and perhaps implement them in your own free time:
+If you are interested, you may explore these additional concepts/features relevant to coding in the Java language and perhaps implement them in your own free time:
 
 - Class inheritance
 - Interfaces
 - Unit and system testing using `JUnit`
 - Implement multiple lives for each player. If a player sends the total number of points higher than 99, they lose a life, their cards are collected, and they are dealt a new hand.
+- Add a GUI to allow the players to play the game just like a normal video game. For extra bonus points, the GUI should take into account the possibility when there are a lot of players/cards and adjust the visual aspect accordingly so as to not clutter the screen too much.
+- Add multiplayer mode. Bonus points if the multiplayer can be done both locally and online (i.e., over the network/Internet).
 - Implement CPU players that play in an optimized manner. Each CPU player checks the current running total value and selects the best playable card, with possibly an optional lookahead to some degree/level. Each player should not know what cards are possessed by other players, but other players could potentially infer those cards based on behavior using game theory.
 
 ## Acknowledgements
