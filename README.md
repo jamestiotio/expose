@@ -65,16 +65,16 @@ This course was brought about by collaborating Indonesian students currently stu
 - [Filbert Cia](https://github.com/FolkLoreee)
 - [Sean Gunawan](https://github.com/naffins)
 - [James Raphael Tiovalen](https://github.com/jamestiotio)
-- Edward Marco Moktar
-- Jonathan Davinius Layardi
-- Erick Chandra
-- Nathan Chang
-- Michelle Ordelia Sumaryo
+- [Edward Marco Moktar](https://www.linkedin.com/in/edwardmoktar)
+- [Jonathan Davinius Layardi](https://www.linkedin.com/in/jonathanlayardi)
+- [Erick Chandra](https://github.com/erickch123)
+- [Nathan Chang](https://www.linkedin.com/in/nathan-chang-a0a23b212)
+- [Michelle Ordelia Sumaryo](https://www.linkedin.com/in/michelleordeliasumaryo)
 
 Credits also to the respective organizer teams from [PPI Singapura](https://www.ppisingapura.com/) and [PINUS](https://pinusonline.org/) (from NUS)! In particular, thanks to:
 
-- Florentiana Yuwono
-- Tiffany Irene Prasetio
-- Victoria Magdalena
-- Jason Christopher
-- Farrel Dwireswara Salim
+- [Florentiana Yuwono](https://github.com/florentianayuwono)
+- [Tiffany Irene Prasetio](https://www.linkedin.com/in/tiffanyireneprasetio)
+- [Victoria Magdalena](https://www.linkedin.com/in/victoriamagdalena)
+- [Jason Christopher](https://github.com/jasonchristopher21)
+- [Farrel Dwireswara Salim](https://github.com/sugiyem)
